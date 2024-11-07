@@ -21,7 +21,7 @@ assessmentButton.addEventListener(
             resultDivision.removeChild(resultDivision.firstChild);
         }
 
-
+        /*
         const header = document.createElement('h3');
         header.innerText = '診断結果';
         resultDivision.appendChild(header);
@@ -31,6 +31,25 @@ assessmentButton.addEventListener(
         const result = assessment(userNameInput.value);
         paragrah.innerText = result;
         resultDivision.appendChild(paragrah);
+        */
+
+
+        const headerDivition=document.createElement("div");
+        headerDivition.setAttribute("class",'card-header text-bg-primary');
+        headerDivition.innerText="診断結果";
+        const bodyDivition=document.createElement("div");
+        bodyDivition.setAttribute("class","card-body");
+        const paragrah = document.createElement("p");
+        const result = assessment(userNameInput.value);
+        paragrah.setAttribute("class","card-text");
+        paragrah.innerText=result;
+        bodyDivition.appendChild(paragrah);
+        
+        resultDivision.setAttribute("class","card");
+        resultDivision.appendChild(headerDivition);
+        resultDivision.appendChild(bodyDivition);
+
+
 
 
         while(tweetDivision.firstChild){
